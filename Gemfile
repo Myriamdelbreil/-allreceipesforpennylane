@@ -55,6 +55,7 @@ gem "annotaterb"
 gem "pry-byebug"
 gem "ingreedy"
 gem "activerecord-import"
+gem "kaminari"
 
 group :development, :test do
   gem "dotenv-rails"

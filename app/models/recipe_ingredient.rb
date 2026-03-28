@@ -28,4 +28,8 @@ class RecipeIngredient < ApplicationRecord
   validates :original_text, presence: true
   validates :quantity, presence: true
   validates :unit, presence: true
+
+  def detailed_quantity
+    "#{quantity} #{unit} #{ingredient.name}"
+  end
 end
