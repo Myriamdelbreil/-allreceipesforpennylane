@@ -30,4 +30,16 @@ class Recipe < ApplicationRecord
   validates :cook_time, presence: true
   validates :prep_time, presence: true
   validates :title, presence: true
+
+  def total_prep_time
+    prep_time + cook_time
+  end
+
+  def formatted_prep_time
+    if total_prep_time < 60
+      "#{total_prep_time} min"
+    else
+      Time.at(total_prep_time * 60).utc.strftime("%Hh%M").sub(/^0h/, '')
+    end
+  end
 end
